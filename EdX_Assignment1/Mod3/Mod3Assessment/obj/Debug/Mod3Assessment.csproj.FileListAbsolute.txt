@@ -1,0 +1,7 @@
+D:\Projects\EdX\Mod3\Mod3Assessment\bin\Debug\Mod3Assessment.exe.config
+D:\Projects\EdX\Mod3\Mod3Assessment\bin\Debug\Mod3Assessment.exe
+D:\Projects\EdX\Mod3\Mod3Assessment\bin\Debug\Mod3Assessment.pdb
+D:\Projects\EdX\Mod3\Mod3Assessment\obj\Debug\Mod3Assessment.csprojAssemblyReference.cache
+D:\Projects\EdX\Mod3\Mod3Assessment\obj\Debug\Mod3Assessment.csproj.CoreCompileInputs.cache
+D:\Projects\EdX\Mod3\Mod3Assessment\obj\Debug\Mod3Assessment.exe
+D:\Projects\EdX\Mod3\Mod3Assessment\obj\Debug\Mod3Assessment.pdb

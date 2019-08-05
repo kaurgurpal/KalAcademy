@@ -1,0 +1,7 @@
+D:\Projects\EdX\Mod1\Mod1_Assignment1\Mod1_Assignment1\bin\Debug\Mod1_Assignment1.exe.config
+D:\Projects\EdX\Mod1\Mod1_Assignment1\Mod1_Assignment1\bin\Debug\Mod1_Assignment1.exe
+D:\Projects\EdX\Mod1\Mod1_Assignment1\Mod1_Assignment1\bin\Debug\Mod1_Assignment1.pdb
+D:\Projects\EdX\Mod1\Mod1_Assignment1\Mod1_Assignment1\obj\Debug\Mod1_Assignment1.csprojAssemblyReference.cache
+D:\Projects\EdX\Mod1\Mod1_Assignment1\Mod1_Assignment1\obj\Debug\Mod1_Assignment1.csproj.CoreCompileInputs.cache
+D:\Projects\EdX\Mod1\Mod1_Assignment1\Mod1_Assignment1\obj\Debug\Mod1_Assignment1.exe
+D:\Projects\EdX\Mod1\Mod1_Assignment1\Mod1_Assignment1\obj\Debug\Mod1_Assignment1.pdb
