@@ -1,0 +1,113 @@
+﻿<Page
+    x:Class="PictureLibrary.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PictureLibrary"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <Flyout x:Key="addFlyout" Placement="BottomEdgeAlignedRight">
+            <StackPanel>
+                <Button Content="Album" Click="AddAlbum_Click" Background="Transparent"></Button>
+                <MenuFlyoutSeparator/>
+                <Button Content="Picture(s)" Click="AddPicture_Click" Background="Transparent"></Button>
+            </StackPanel>
+        </Flyout>
+    </Page.Resources>
+    <Grid >
+        <SplitView x:Name="MainSplitView" DisplayMode="CompactOverlay"  IsPaneOpen="False"   
+               CompactPaneLength="70" OpenPaneLength="250" >
+            <SplitView.Pane>
+                <StackPanel Background="DimGray">
+                    <Button x:Name="Home" Width="65"  Background="Transparent" Click="Home_Click"  >
+                        <ContentControl>
+                            <Image Source="Assets/HomeButton.png" Stretch="UniformToFill" HorizontalAlignment="Center"/>
+                        </ContentControl>
+                    </Button>
+                    <Button x:Name="Albums" Width="65"  Background="Transparent" Click="Albums_Click"  >
+                        <ContentControl>
+                            <Image Source="Assets/album4.jpg" Stretch="UniformToFill" HorizontalAlignment="Center"/>
+                        </ContentControl>
+                    </Button>
+                </StackPanel>
+
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Grid>
+                    <Grid.RowDefinitions >
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <GridView Name="itemsGridView" Grid.Row="0" SizeChanged="ItemsGridView_SizeChanged" ItemsSource="{Binding}">
+                        <GridView.ItemTemplate>
+                            <DataTemplate x:DataType="local:Picture">
+                                <StackPanel>
+                                    <Image Source="{x:Bind path}"></Image>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridView.ItemTemplate>
+
+                        <GridView.ItemContainerStyle>
+                            <Style TargetType="GridViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                                <Setter Property="Margin" Value="0"/>
+                            </Style>
+                        </GridView.ItemContainerStyle>
+
+                        <GridView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <ItemsWrapGrid Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </GridView.ItemsPanel>
+                    </GridView>
+                    <CommandBar x:Name="CommandBar"  Grid.Row="1" OverflowButtonVisibility="Visible" VerticalAlignment="Bottom" Background="LightGray" Foreground="White" >
+                       
+                        <AppBarToggleButton  Name="AppBarToggle" Label="Add" Icon="Add" FlyoutBase.AttachedFlyout="{StaticResource addFlyout}" Click="AppBarToggleButton_Click" />
+                        <AppBarButton Icon="Delete" Label="Delete"  />
+
+                    </CommandBar>
+                </Grid>
+            </SplitView.Content>
+        </SplitView>
+        <ContentDialog x:Name="AddAlbumContentDialog"
+                       
+                        VerticalAlignment="Stretch"
+                        Title="Create Album"
+                        PrimaryButtonText="Save"
+                        IsPrimaryButtonEnabled="True"
+                        SecondaryButtonText="Cancel"
+                        MaxWidth="{Binding ActualWidth, ElementName=pageRoot}"
+                        PrimaryButtonClick="AddAlbumContentDialog_PrimaryButtonClick"
+                       >
+            <StackPanel>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Album Name" Grid.Row="0" Grid.Column="0" ></TextBlock>
+                    <TextBox Name="txtAlbumName" Grid.Row="0" Grid.Column="1"></TextBox>
+                    <TextBlock Name="txtError" Foreground="Red" Grid.Row="1" Grid.ColumnSpan="2"></TextBlock>
+                   </Grid>
+            </StackPanel>
+
+        </ContentDialog>
+       
+    </Grid>
+
+</Page>
